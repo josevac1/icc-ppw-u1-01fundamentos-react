@@ -6,7 +6,7 @@
   "homepage":" https://josevac1.github.io/icc-ppw-u1-01fundamentos-react/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && copy dist\\index.html dist\\404.html",
+    "build": "tsc -b && vite build ",
     "lint": "eslint .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
