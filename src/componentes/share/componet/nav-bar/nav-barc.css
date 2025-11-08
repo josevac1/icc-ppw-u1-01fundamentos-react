@@ -1,0 +1,18 @@
+nav {
+  background-color: #159;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+nav a.active {
+  color: red;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
