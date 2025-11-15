@@ -12,7 +12,6 @@ export const ProyectoDosPage: React.FC = () => {
       <ListadoProyecto 
         listName="Listado de Proyectos (Global)"
         proyectos={proyectos} 
-        onRemoveProyecto={removeProyecto} 
       />
       
       <AddProyectos 

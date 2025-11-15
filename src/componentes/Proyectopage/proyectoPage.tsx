@@ -31,12 +31,6 @@ const ProyectoPage: React.FC = () => {
     setDescripcion('');
   };
 
-  const handleRemoveProyecto = (id: number) => {
-    setProyectos(currentProyectos =>
-      currentProyectos.filter(p => p.id !== id)
-    );
-  };
-
   
   return (
     <div>
@@ -83,7 +77,6 @@ const ProyectoPage: React.FC = () => {
         <ListadoProyecto
           listName="Lista Proyecto (Componente Hijo)"
           proyectos={proyectos}
-          onRemoveProyecto={handleRemoveProyecto} 
         />
       </section>
     </div>

@@ -5,7 +5,7 @@ import type { Proyecto } from '../../interfaces/proyecto-interfaces';
 interface ListadoProps {
   listName: string;
   proyectos: Proyecto[];
-  onRemoveProyecto: (id: number) => void; 
+
 }
 
 const ListadoProyecto: React.FC<ListadoProps> = ({ 
