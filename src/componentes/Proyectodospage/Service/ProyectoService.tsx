@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, type ReactNode }
 import type { Proyecto } from '../../Proyectopage/interfaces/proyecto-interfaces';
 
 
-// --- Definición del Contexto (Técnicamente, esto es lo que es) ---
+
 interface ProyectosContextType {
   proyectos: Proyecto[];
   addProyecto: (newProyectoData: Omit<Proyecto, 'id'>) => void;
@@ -12,7 +12,7 @@ interface ProyectosContextType {
 const ProyectosContext = createContext<ProyectosContextType | undefined>(undefined);
 
 
-// --- Constantes y Lógica del Servicio ---
+
 const STORAGE_KEY = 'proyectosApp';
 
 const loadProyectos = (): Proyecto[] => {
@@ -22,8 +22,7 @@ const loadProyectos = (): Proyecto[] => {
   }];
 };
 
-// --- 1. El "Proveedor" (Lo que envuelve tu App) ---
-// Lo llamaremos "ProyectoServiceProvider" para que tenga sentido
+
 export const ProyectoServiceProvider = ({ children }: { children: ReactNode }) => {
   
   const [proyectos, setProyectos] = useState<Proyecto[]>(loadProyectos);
@@ -55,8 +54,7 @@ export const ProyectoServiceProvider = ({ children }: { children: ReactNode }) =
   );
 };
 
-// --- 2. El "Hook" (El reemplazo de 'inject(ProyectosService)') ---
-// ¡Este es el Hook que usarás en tus componentes!
+
 export const useProyectoService = () => {
   const context = useContext(ProyectosContext);
   if (!context) {
