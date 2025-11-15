@@ -3,8 +3,7 @@ import ListadoProyecto from '../Proyectopage/componentes/listado-componentes/lis
 import AddProyectos from '../Proyectopage/componentes/addProyectos';
  
 export const ProyectoDosPage: React.FC = () => {
- 
- 
+  
   const { proyectos, addProyecto, removeProyecto } = useProyectoService();
 
   return (
@@ -18,10 +17,14 @@ export const ProyectoDosPage: React.FC = () => {
       
       <AddProyectos 
         onAddProyecto={addProyecto} 
-        onRemoveProyecto={removeProyecto} 
+        onRemoveProyecto={() => {
+          if (proyectos.length > 0) {
+            const lastId = proyectos[0].id;
+            removeProyecto(lastId);
+          }
+        }}
       />
 
-      
     </div>
   );
 };

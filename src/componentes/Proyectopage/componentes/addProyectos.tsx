@@ -1,29 +1,28 @@
 import { useState } from 'react';
 import type { Proyecto } from '../interfaces/proyecto-interfaces';
  
-
 interface AddProyectoProps {
   onAddProyecto: (newProyectoData: Omit<Proyecto, 'id'>) => void;
-  onRemoveProyecto: (id: number) => void; 
+  onRemoveProyecto: () => void; // ❗ OJO: ya no recibe id aquí
 }
-
 
 const AddProyecto: React.FC<AddProyectoProps> = ({ 
   onAddProyecto, 
   onRemoveProyecto 
 }) => {
-  
-  
+
   const [name, setName] = useState('');
   const [descripcion, setDescripcion] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
+
     onAddProyecto({
       nombre: name,
       description: descripcion,
     });
+
     setName('');
     setDescripcion('');
   };
@@ -38,6 +37,7 @@ const AddProyecto: React.FC<AddProyectoProps> = ({
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+
       <input
         type="text"
         placeholder="Descripción del proyecto"
@@ -45,16 +45,15 @@ const AddProyecto: React.FC<AddProyectoProps> = ({
         onChange={(e) => setDescripcion(e.target.value)}
       />
 
-      
-      <div>
+      <div style={{ marginTop: '10px' }}>
         <button type="submit">Agregar</button>
 
         <button 
           type="button" 
-          onClick={() => onRemoveProyecto(1)} 
+          onClick={onRemoveProyecto}  
           style={{ marginLeft: '8px' }} 
         >
-          Eliminar Primer Proyecto
+          Eliminar
         </button>
       </div>
 

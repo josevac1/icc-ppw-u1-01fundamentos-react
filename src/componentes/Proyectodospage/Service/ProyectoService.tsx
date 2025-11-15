@@ -46,15 +46,16 @@ export const ProyectoServiceProvider = ({ children }: { children: ReactNode }) =
   };
 
   const value = { proyectos, addProyecto, removeProyecto };
-
-  return (
+    return (
     <ProyectosContext.Provider value={value}>
       {children}
     </ProyectosContext.Provider>
   );
+
 };
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useProyectoService = () => {
   const context = useContext(ProyectosContext);
   if (!context) {
