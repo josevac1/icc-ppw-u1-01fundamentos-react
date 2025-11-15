@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-
-
+import { useState } from 'react';
 import  type { Proyecto } from './interfaces/proyecto-interfaces';
 import ListadoProyecto from './componentes/listado-componentes/listadoProyecto';
 
