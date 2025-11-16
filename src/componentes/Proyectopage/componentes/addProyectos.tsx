@@ -3,7 +3,7 @@ import type { Proyecto } from '../interfaces/proyecto-interfaces';
  
 interface AddProyectoProps {
   onAddProyecto: (newProyectoData: Omit<Proyecto, 'id'>) => void;
-  onRemoveProyecto: () => void; // ❗ OJO: ya no recibe id aquí
+  onRemoveProyecto: () => void; 
 }
 
 const AddProyecto: React.FC<AddProyectoProps> = ({ 
