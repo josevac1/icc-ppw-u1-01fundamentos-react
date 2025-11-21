@@ -21,6 +21,7 @@ export const FormularioDinamico = () => {
 
   const onSubmit = (data: unknown) => {
     console.log(data);
+    alert("Guardado correctamente");
   };
 
   const onAddToLenguajes = () => {
@@ -30,7 +31,6 @@ export const FormularioDinamico = () => {
   };
 
   const handleKeyDown = (e: { key: string; preventDefault: () => void; }) => {
-
     if (e.key === 'Enter') {
       e.preventDefault();
       onAddToLenguajes();
@@ -106,10 +106,7 @@ export const FormularioDinamico = () => {
               </div>
             ))}
 
-            {errors.lenguajes && errors.lenguajes.root && (
-               <span className="form-text text-danger">Debe tener mínimo 3 lenguajes</span>
-            )}
-            {errors.lenguajes && errors.lenguajes.type === "minLength" && (
+            {errors.lenguajes && (errors.lenguajes.root || errors.lenguajes.type === "minLength") && (
                <span className="form-text text-danger">Debe tener mínimo 3 lenguajes</span>
             )}
           </div>
