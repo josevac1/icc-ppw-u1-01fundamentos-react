@@ -32,6 +32,25 @@ export default function NavBar() {
       >
         ProyectoDosPage
       </NavLink>
+
+            <NavLink
+        to="/formulario/normal"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Formulario
+      </NavLink>
+            <NavLink
+        to="/formulario/dinamico"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        FormularioDinamico
+      </NavLink>
+            <NavLink
+        to="/formulario/mas"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        FormularioMore
+      </NavLink>
     </nav>
   );
 }

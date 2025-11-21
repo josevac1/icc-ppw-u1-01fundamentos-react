@@ -5,6 +5,9 @@ import ProyectoPage from "./componentes/Proyectopage/proyectoPage";
 import ProyectoDosPage from "./componentes/Proyectodospage/proyectoDosPage";
 import NavBar from  "./componentes/share/componet/nav-bar/nav_bar";
 import { ProyectoServiceProvider } from "./componentes/Proyectodospage/Service/ProyectoService";
+import FormulariosRouters from "./Formularios/FormularioRouters";
+
+
 function App() {
   return (
     <BrowserRouter basename="/icc-ppw-u1-01fundamentos-react">
@@ -18,6 +21,10 @@ function App() {
         <Route path="/perfil" element={<PerfilHome />} />
         <Route path="/page" element={<ProyectoPage />} />
         <Route path="/dospage" element={<ProyectoDosPage />} />
+
+         <Route path="/formulario/*" element={<FormulariosRouters />} />
+
+        <Route path="*" element={<FormulariosRouters />} />
       </Routes>
       </ProyectoServiceProvider>
     </BrowserRouter>
